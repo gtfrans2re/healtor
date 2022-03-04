@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healtor/screens/home_screen.dart';
 import 'package:healtor/screens/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -70,7 +71,12 @@ class _LoginScreenState extends State<LoginScreen> {
       child: MaterialButton(
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) =>
+                  HomeScreen()));
+        },
         child: const Text(
           "Login", textAlign: TextAlign.center,
           style: TextStyle(
