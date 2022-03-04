@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healtor/screens/registration_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -93,7 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   SizedBox(
-                    height: 200,
+                    height: 150,
                     child: Image.asset(
                       "assets/logo-healtor.png",
                       fit: BoxFit.contain,
@@ -114,7 +115,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: <Widget>[
                       Text("Don't have an account? "),
                       GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      RegistrationScreen()
+                              ));
+                        },
                         child: Text(
                           "SignUp",
                           style: TextStyle(
