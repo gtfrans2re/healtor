@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "365599050963",
+    "project_id": "healtor-32059",
+    "storage_bucket": "healtor-32059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365599050963:android:9a55bbe039daefa7ec9826",
+        "android_client_info": {
+          "package_name": "com.example.healtor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365599050963-nom5vcam30cmi1qt1kvbbb1f2dpdbjg5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healtor",
+            "certificate_hash": "86dbd68bbceb9d7001191270da63a72be69ddec3"
+          }
+        },
+        {
+          "client_id": "365599050963-grqvhql6vn5fk32la297nvij7rr6tu6u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgC0OZLqOHwSjNBsFSCtl6pPnhTRUOnTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365599050963-grqvhql6vn5fk32la297nvij7rr6tu6u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
