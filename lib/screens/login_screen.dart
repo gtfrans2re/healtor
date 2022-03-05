@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 import 'package:healtor/screens/home_screen.dart';
 import 'package:healtor/screens/registration_screen.dart';
@@ -95,10 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) =>
-                  const HomeScreen()));
+          signIn(emailController.text, passwordController.text);
         },
         child: const Text(
           "Login", textAlign: TextAlign.center,
@@ -178,6 +176,10 @@ class _LoginScreenState extends State<LoginScreen> {
       await _auth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((uid) => {
+            Fluttertoast.showToast(msg: "Login Successful"),
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomeScreen())),
+      }).catchError((e) {
+        Fluttertoast.showToast(msg: e!.message);
       });
     }
   }
