@@ -171,4 +171,14 @@ class _LoginScreenState extends State<LoginScreen> {
       )
     );
   }
+
+  // login function
+  void signIn(String email, String password) async {
+    if (_formKey.currentState!.validate()) {
+      await _auth
+          .signInWithEmailAndPassword(email: email, password: password)
+          .then((uid) => {
+      });
+    }
+  }
 }
