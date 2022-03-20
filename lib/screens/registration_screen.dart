@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:healtor/model/user_model.dart';
@@ -13,6 +14,14 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends  State<RegistrationScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    if (kDebugMode) {
+      print('Calling initState for Registration Screen');
+    }
+  }
 
   // signUp auth
   final _auth = FirebaseAuth.instance;

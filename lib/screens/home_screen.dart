@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:healtor/model/user_model.dart';
 import 'package:healtor/screens/login_screen.dart';
@@ -12,12 +13,16 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
 
   @override
   void initState() {
     super.initState();
+    if (kDebugMode) {
+      print('Calling initState for HomeScreen Screen');
+    }
     FirebaseFirestore.instance
       .collection("users")
       .doc(user!.uid)

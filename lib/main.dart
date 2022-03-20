@@ -28,7 +28,80 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const LoginScreen(),
+      home: const Navigation(),
+    );
+  }
+}
+
+class Navigation extends StatefulWidget {
+  const Navigation({Key? key}) : super(key: key);
+
+  @override
+  _NavigationState createState() => _NavigationState();
+}
+
+class _NavigationState extends State<Navigation> {
+
+  int _selectedIndex = 0;
+
+  final List<Widget> _widgetOptions = [
+    const LoginScreen(),
+    const LoginScreen(),
+    const LoginScreen(),
+    const LoginScreen(),
+  ];
+
+  void _onItemTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Welcome to healtor'),
+      ),
+      body: IndexedStack(children: [
+        Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        )
+      ]),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.blueAccent,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                  Icons.home,
+              ),
+              label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.near_me,
+            ),
+            label: 'Near me',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.medical_services,
+            ),
+            label: 'Support',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.login,
+            ),
+            label: 'Login',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTap,
+      ),
     );
   }
 }

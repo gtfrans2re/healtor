@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
 import 'package:healtor/screens/home_screen.dart';
@@ -12,6 +13,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  @override
+  void initState() {
+    super.initState();
+    if (kDebugMode) {
+      print('Calling initState for Login Screen');
+    }
+  }
+
   // form key
   final _formKey = GlobalKey<FormState>();
 
