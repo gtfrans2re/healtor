@@ -70,9 +70,6 @@ class _NavigationState extends State<Navigation> {
       ]),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.blueAccent,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white70,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(
