@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:healtor/screens/login_screen.dart';
+import 'package:healtor/screens/maps.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,7 +47,7 @@ class _NavigationState extends State<Navigation> {
 
   final List<Widget> _widgetOptions = [
     const LoginScreen(),
-    const LoginScreen(),
+    const MapsPage(),
     const LoginScreen(),
     const LoginScreen(),
   ];
